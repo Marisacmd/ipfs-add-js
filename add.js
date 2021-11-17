@@ -7,7 +7,7 @@ async function addFileToIPFS(file) {
     const { cid } = await ipfs.add(file);
     console.info(cid);
     await ipfs.stop();
-    process.exit(); //node.stop() doesn't work, but need other way
+    process.exit(); //ipfs.stop() doesn't shut down, but need other way
 }
 
 addFileToIPFS(file);
